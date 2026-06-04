@@ -1,0 +1,14 @@
+{
+  "name": "cv",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "generate:tex": "node scripts/generate-tex.mjs data/cv.json cv.tex",
+    "build:pdf": "npm run generate:tex && pdflatex -interaction=nonstopmode -halt-on-error cv.tex",
+    "build:site": "tsc --project tsconfig.json && node scripts/copy-site-assets.mjs",
+    "build": "npm run generate:tex && npm run build:site"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3"
+  }
+}

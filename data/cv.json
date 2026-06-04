@@ -1,0 +1,55 @@
+{
+  "profile": {
+    "name": "Thomas Droxler",
+    "github": "https://github.com/tdroxler",
+    "linkedin": "https://linkedin.com/in/thomas-droxler-06010481"
+  },
+  "summary": "Senior Software Engineer with 10+ years of experience building high-performance backend services, blockchain infrastructure and distributed systems. Strong expertise in Scala, backend architecture, PostgreSQL optimization, API design and CI/CD workflows. Passionate about simple, maintainable solutions and clean software design, with a proven ability to quickly adapt to new technologies, domains, and challenges.",
+  "experience": [
+    {
+      "company": "Alephium",
+      "context": "Open-source blockchain protocol",
+      "period": "2020 - Present",
+      "role": "Senior Software Engineer",
+      "description": "Designed and developed backend services, APIs, and blockchain infrastructure powering the Alephium ecosystem. Optimized systems processing over 100 million blockchain records, delivering low-latency and reliable access to data for users, wallets, explorers, and applications.",
+      "technologies": ["Scala", "Vert.x", "Akka/Pekko", "Tapir", "PostgreSQL", "TypeScript"]
+    },
+    {
+      "company": "Bestmile",
+      "period": "2015 - 2020",
+      "role": "Progressed from Intern to Senior Scala Engineer",
+      "description": "Developed and scaled cloud-based software for the operation and optimization of autonomous vehicle fleets, contributing to backend architecture, distributed systems, and real-time data processing.",
+      "technologies": ["Scala", "Kafka", "Akka", "PostGIS", "Kubernetes"]
+    }
+  ],
+  "education": [
+    {
+      "degree": "Bachelor & Master in Computer Science",
+      "period": "2008 - 2015",
+      "institution": "EPFL - Swiss Federal Institute of Technology Lausanne"
+    }
+  ],
+  "expertise": [
+    "Backend Architecture",
+    "Distributed Systems",
+    "Blockchain Infrastructure",
+    "PostgreSQL Performance & Data Modeling",
+    "API Design",
+    "Scalability & Performance Optimization"
+  ],
+  "languages": [
+    {
+      "name": "French",
+      "level": "Native"
+    },
+    {
+      "name": "English",
+      "level": "B2"
+    }
+  ],
+  "interests": [
+    "Music (performing musician, sound engineer)",
+    "volunteering (Pro Senectute)",
+    "video games"
+  ]
+}

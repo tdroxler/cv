@@ -24,7 +24,7 @@ type Cv = {
   expertise: string[];
   languages: Array<{
     name: string;
-    level: string;
+    level?: string;
   }>;
   interests: string[];
 };
@@ -68,6 +68,10 @@ function section(title: string, children: Node[]): HTMLElement {
 
 function list(items: string[]): HTMLElement {
   return el("ul", { className: "tag-list" }, items.map((item) => el("li", { text: item })));
+}
+
+function languageLabel(language: Cv["languages"][number]): string {
+  return language.level ? `${language.name} (${language.level})` : language.name;
 }
 
 function render(cv: Cv): void {
@@ -120,7 +124,7 @@ function render(cv: Cv): void {
         )
       ),
       section("Core Expertise", [list(cv.expertise)]),
-      section("Languages", [list(cv.languages.map((language) => `${language.name} (${language.level})`))]),
+      section("Languages", [list(cv.languages.map(languageLabel))]),
       section("Interests", [list(cv.interests)])
     ])
   );

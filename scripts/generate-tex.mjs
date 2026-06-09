@@ -50,6 +50,10 @@ function educationItem(item) {
 ${tex(item.institution)}`;
 }
 
+function languageItem(language) {
+  return language.level ? `${tex(language.name)} (${tex(language.level)})` : tex(language.name);
+}
+
 const profile = cv.profile;
 const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
 const contactLinks = [
@@ -86,7 +90,7 @@ ${section("Education", cv.education.map(educationItem).join("\n\n\\vspace{12pt}\
 
 ${section("Core Expertise", cv.expertise.map(tex).join(" - "))}
 
-${section("Languages", cv.languages.map((language) => `${tex(language.name)} (${tex(language.level)})`).join(" - "))}
+${section("Languages", cv.languages.map(languageItem).join(" - "))}
 
 ${section("Interests", cv.interests.map(tex).join(", "))}
 

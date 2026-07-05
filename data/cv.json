@@ -4,22 +4,35 @@
     "github": "https://github.com/tdroxler",
     "linkedin": "https://linkedin.com/in/thomas-droxler-06010481"
   },
-  "summary": "Senior Software Engineer with 10+ years of experience building high-performance backend services, blockchain infrastructure and distributed systems. Strong expertise in Scala, backend architecture, PostgreSQL optimization, API design and CI/CD workflows. Passionate about simple, maintainable solutions and clean software design, with a proven ability to quickly adapt to new technologies, domains, and challenges.",
+  "summary": "Lead Backend Engineer with 10+ years of experience building distributed systems, blockchain infrastructure and high-performance backend services. Strong expertise in Scala, backend architecture, PostgreSQL optimization, API design and production systems. Passionate about functional programming, clean software design and scalable distributed architectures, with a proven ability to quickly adapt to new technologies and challenging domains.",
   "experience": [
     {
       "company": "Alephium",
-      "context": "Open-source blockchain protocol",
+      "context": "Open-source Layer 1 blockchain",
       "period": "2020 - Present",
-      "role": "Senior Software Engineer",
-      "description": "Designed and developed backend services, APIs, and blockchain infrastructure powering the Alephium ecosystem. Optimized systems processing over 100 million blockchain records, delivering low-latency and reliable access to data for users, wallets, explorers, and applications.",
-      "technologies": ["Scala", "Vert.x", "Akka/Pekko", "Tapir", "PostgreSQL", "TypeScript"]
+      "role": "Lead Backend Engineer",
+      "description": "Led the development and long-term evolution of the Explorer Backend, a PostgreSQL-based system indexing and serving more than 100 million blockchain records while continuously synchronizing with the blockchain network. Also contributed to the core blockchain node (networking, APIs and wallet) and led the Ralph Language Server initiative to improve the developer experience across editors.",
+      "technologies": [
+        "Scala",
+        "Vert.x",
+        "Akka/Pekko",
+        "Tapir",
+        "PostgreSQL",
+        "TypeScript"
+      ]
     },
     {
       "company": "Bestmile",
       "period": "2015 - 2020",
       "role": "Progressed from Intern to Senior Scala Engineer",
-      "description": "Developed and scaled cloud-based software for the operation and optimization of autonomous vehicle fleets, contributing to backend architecture, distributed systems, and real-time data processing.",
-      "technologies": ["Scala", "Kafka", "Akka", "PostGIS", "Kubernetes"]
+      "description": "Developed and scaled cloud-based software for autonomous vehicle fleets, contributing to backend architecture, real-time data processing and production deployments for large-scale transportation systems.",
+      "technologies": [
+        "Scala",
+        "Kafka",
+        "Akka",
+        "PostGIS",
+        "Kubernetes"
+      ]
     }
   ],
   "education": [
@@ -30,12 +43,15 @@
     }
   ],
   "expertise": [
+    "Scala",
     "Backend Architecture",
     "Distributed Systems",
     "Blockchain Infrastructure",
     "PostgreSQL Performance & Data Modeling",
     "API Design",
-    "Scalability & Performance Optimization"
+    "Scalability & Performance Optimization",
+    "CI/CD",
+    "Open Source Development"
   ],
   "languages": [
     {

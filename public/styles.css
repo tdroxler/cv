@@ -38,11 +38,25 @@ a:hover {
 
 .hero {
   display: flex;
-  align-items: flex-end;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
   padding: 24px 0 28px;
   border-bottom: 2px solid var(--text);
+}
+
+.profile-pic {
+  width: 112px;
+  height: 112px;
+  flex: 0 0 auto;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: var(--surface);
+}
+
+.identity {
+  flex: 1 1 auto;
 }
 
 h1,
@@ -142,6 +156,11 @@ main {
   .entry-header {
     align-items: flex-start;
     flex-direction: column;
+  }
+
+  .profile-pic {
+    width: 96px;
+    height: 96px;
   }
 
   .links {

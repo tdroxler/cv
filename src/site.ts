@@ -1,6 +1,7 @@
 type Cv = {
   profile: {
     name: string;
+    profilePic?: string;
     birthDate?: string;
     location?: string;
     email?: string;
@@ -43,13 +44,14 @@ function text(value: string): Text {
 
 function el<K extends keyof HTMLElementTagNameMap>(
   tag: K,
-  options: { className?: string; href?: string; text?: string } = {},
+  options: { className?: string; src?: string; alt?: string; text?: string } = {},
   children: Array<Node | string> = []
 ): HTMLElementTagNameMap[K] {
   const node = document.createElement(tag);
 
   if (options.className) node.className = options.className;
-  if (options.href && node instanceof HTMLAnchorElement) node.href = options.href;
+  if (options.src && node instanceof HTMLImageElement) node.src = options.src;
+  if (options.alt && node instanceof HTMLImageElement) node.alt = options.alt;
   if (options.text) node.textContent = options.text;
 
   for (const child of children) {
@@ -77,24 +79,23 @@ function languageLabel(language: Cv["languages"][number]): string {
 function render(cv: Cv): void {
   const profile = cv.profile;
   const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
-  const links = [
-    profile.email ? el("a", { href: `mailto:${profile.email}`, text: profile.email }) : undefined,
-    profile.github ? el("a", { href: profile.github, text: "GitHub" }) : undefined,
-    profile.linkedin ? el("a", { href: profile.linkedin, text: "LinkedIn" }) : undefined
-  ].filter((link): link is HTMLAnchorElement => Boolean(link));
+  const contactDetails = [profile.email, profile.github, profile.linkedin].filter(Boolean);
 
   document.title = `${profile.name} - CV`;
 
   app.replaceChildren(
     el("header", { className: "hero" }, [
-      el("div", { className: "identity" }, [
-        el("h1", { text: profile.name }),
-        ...(personalDetails.length > 0
-          ? [el("p", { className: "meta", text: personalDetails.join(" · ") })]
-          : [])
+      ...(profile.profilePic
+        ? [el("img", { className: "profile-pic", src: profile.profilePic, alt: `${profile.name} profile picture` })]
+        : []),
+        el("div", { className: "identity" }, [
+          el("h1", { text: profile.name }),
+          ...(personalDetails.length > 0
+            ? [el("p", { className: "meta", text: personalDetails.join(" · ") })]
+            : [])
+        ]),
+      ...(contactDetails.length > 0 ? [el("p", { className: "meta", text: contactDetails.join(" · ") })] : [])
       ]),
-      ...(links.length > 0 ? [el("nav", { className: "links" }, links)] : [])
-    ]),
     el("main", {}, [
       section("Professional Summary", [el("p", { text: cv.summary })]),
       section(

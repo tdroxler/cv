@@ -20,10 +20,6 @@ function tex(value) {
     .replace(/\^/g, "\\textasciicircum{}");
 }
 
-function linkLabel(url) {
-  return String(url).replace(/^https?:\/\//, "");
-}
-
 function section(title, body) {
   return `\\section*{${tex(title)}}
 \\hrule
@@ -55,32 +51,48 @@ function languageItem(language) {
 }
 
 const profile = cv.profile;
+const imagePath = profile.profilePic ? path.join(path.dirname(inputPath), profile.profilePic) : undefined;
 const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
-const contactLinks = [
-  profile.email ? `\\href{mailto:${tex(profile.email)}}{${tex(profile.email)}}` : undefined,
-  profile.github ? `\\href{${tex(profile.github)}}{${tex(linkLabel(profile.github))}}` : undefined,
-  profile.linkedin ? `\\href{${tex(profile.linkedin)}}{${tex(linkLabel(profile.linkedin))}}` : undefined
+const contactDetails = [
+  profile.email,
+  profile.github,
+  profile.linkedin
 ].filter(Boolean);
 const headerLines = [
   `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`,
   personalDetails.length > 0 ? `${personalDetails.map(tex).join(" \\\\\n")}\\\\` : undefined,
   "\\vspace{4pt}",
-  contactLinks.length > 0 ? contactLinks.join(" \\\\\n") : undefined
+  contactDetails.length > 0 ? contactDetails.map(tex).join(" \\\\\n") : undefined
 ].filter(Boolean).join("\n");
+const headerBlock = profile.profilePic
+  ? String.raw`\noindent
+\begin{minipage}[t]{3.2cm}
+\vspace{0pt}
+\includegraphics[width=3.2cm,keepaspectratio]{${tex(imagePath)}}
+\end{minipage}%
+\hspace{1.5em}%
+\begin{minipage}[t]{\dimexpr\textwidth-3.2cm-1.5em\relax}
+\vspace{0pt}
+\raggedright
+${headerLines}
+\end{minipage}
+`
+  : String.raw`\begin{center}
+${headerLines}
+
+\end{center}`;
 
 const document = String.raw`\documentclass[11pt,a4paper]{article}
 
 \usepackage[margin=2cm]{geometry}
-\usepackage[hidelinks]{hyperref}
-
+\usepackage{graphicx}
 \pagestyle{empty}
 
 \begin{document}
 
-\begin{center}
-${headerLines}
+${headerBlock}
 
-\end{center}
+\vspace{1.5em}
 
 ${section("Professional Summary", tex(cv.summary))}
 

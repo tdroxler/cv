@@ -35,14 +35,36 @@
     }
   ],
   "expertise": [
-    "Backend Architecture",
-    "Distributed Systems",
-    "PostgreSQL Performance & Data Modeling",
-    "API Design",
-    "Scalability & Performance Optimization",
-    "Blockchain Infrastructure",
-    "AI-Assisted Development",
-    "Technical Ownership"
+    {
+      "category": "Backend & Architecture",
+      "items": [
+        "Distributed Systems",
+        "Software Architecture",
+        "API Design",
+        "Performance & Scalability"
+      ]
+    },
+    {
+      "category": "Data & Production",
+      "items": [
+        "PostgreSQL & SQL",
+        "Data Modeling",
+        "Query & Performance Optimization",
+        "Production Troubleshooting",
+        "Monitoring & Observability",
+        "Integration Testing"
+      ]
+    },
+    {
+      "category": "Engineering & Delivery",
+      "items": [
+        "Technical Ownership from Design to Production",
+        "Developer Tooling",
+        "CI/CD & Containerized Environments",
+        "Full-Stack Development",
+        "AI-Assisted Development"
+      ]
+    }
   ],
   "languages": [
     {

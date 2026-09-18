@@ -33,11 +33,11 @@ function experienceItem(item) {
   return `\\textbf{${tex(company)}} \\hfill ${tex(item.period)}\\\\
 \\emph{${tex(item.role)}}
 
-\\vspace{5pt}
+\\vspace{4pt}
 
 ${tex(item.description)}
 
-\\vspace{4pt}
+\\vspace{3pt}
 \\textit{Technologies:} ${item.technologies.map(tex).join(", ")}`;
 }
 
@@ -48,6 +48,10 @@ ${tex(item.institution)}`;
 
 function languageItem(language) {
   return language.level ? `${tex(language.name)} (${tex(language.level)})` : tex(language.name);
+}
+
+function expertiseItem(group) {
+  return `\\noindent\\textbf{${tex(group.category)}}: ${group.items.map(tex).join(" $\\cdot$ ")}`;
 }
 
 const profile = cv.profile;
@@ -62,7 +66,7 @@ const headerLines = [
   `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`,
   profile.citizenship ? `${tex(profile.citizenship)}\\\\` : undefined,
   personalDetails.length > 0 ? `${personalDetails.map(tex).join(" \\\\\n")}\\\\` : undefined,
-  "\\vspace{4pt}",
+  "\\vspace{3pt}",
   contactDetails.length > 0 ? contactDetails.map(tex).join(" \\\\\n") : undefined
 ].filter(Boolean).join("\n");
 const headerBlock = profile.profilePic
@@ -85,7 +89,13 @@ ${headerLines}
 
 const document = String.raw`\documentclass[11pt,a4paper]{article}
 
-\usepackage[margin=2cm]{geometry}
+\usepackage[
+  left=1.5cm,
+  right=1.5cm,
+  top=1.5cm,
+  bottom=0.9cm
+]{geometry}
+
 \usepackage{graphicx}
 \pagestyle{empty}
 
@@ -93,11 +103,11 @@ const document = String.raw`\documentclass[11pt,a4paper]{article}
 
 ${headerBlock}
 
-\vspace{1.5em}
+\vspace{1.4em}
 
 ${section("Professional Summary", tex(cv.summary))}
 
-${section("Core Expertise", cv.expertise.map(tex).join(" - "))}
+${section("Core Expertise", cv.expertise.map(expertiseItem).join("\\\\[3pt]\n"))}
 
 ${section("Professional Experience", cv.experience.map(experienceItem).join("\n\n\\vspace{12pt}\n\n\\noindent\n"))}
 

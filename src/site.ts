@@ -23,7 +23,10 @@ type Cv = {
     period: string;
     institution: string;
   }>;
-  expertise: string[];
+  expertise: Array<{
+    category: string;
+    items: string[];
+  }>;
   languages: Array<{
     name: string;
     level?: string;
@@ -128,7 +131,15 @@ function render(cv: Cv): void {
           ])
         )
       ),
-      section("Core Expertise", [list(cv.expertise)]),
+      section(
+        "Core Expertise",
+        cv.expertise.map((group) =>
+          el("div", { className: "expertise-group" }, [
+            el("h3", { text: group.category }),
+            el("p", { text: group.items.join(" · ") })
+          ])
+        )
+      ),
       section("Languages", [list(cv.languages.map(languageLabel))]),
       section("Interests", [list(cv.interests)])
     ])

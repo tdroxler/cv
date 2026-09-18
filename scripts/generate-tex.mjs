@@ -60,6 +60,7 @@ const contactDetails = [
 ].filter(Boolean);
 const headerLines = [
   `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`,
+  profile.citizenship ? `${tex(profile.citizenship)}\\\\` : undefined,
   personalDetails.length > 0 ? `${personalDetails.map(tex).join(" \\\\\n")}\\\\` : undefined,
   "\\vspace{4pt}",
   contactDetails.length > 0 ? contactDetails.map(tex).join(" \\\\\n") : undefined
@@ -96,11 +97,11 @@ ${headerBlock}
 
 ${section("Professional Summary", tex(cv.summary))}
 
+${section("Core Expertise", cv.expertise.map(tex).join(" - "))}
+
 ${section("Professional Experience", cv.experience.map(experienceItem).join("\n\n\\vspace{12pt}\n\n\\noindent\n"))}
 
 ${section("Education", cv.education.map(educationItem).join("\n\n\\vspace{12pt}\n\n"))}
-
-${section("Core Expertise", cv.expertise.map(tex).join(" - "))}
 
 ${section("Languages", cv.languages.map(languageItem).join(" - "))}
 

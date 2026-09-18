@@ -1,6 +1,7 @@
 type Cv = {
   profile: {
     name: string;
+    citizenship?: string;
     profilePic?: string;
     birthDate?: string;
     location?: string;
@@ -90,6 +91,9 @@ function render(cv: Cv): void {
         : []),
         el("div", { className: "identity" }, [
           el("h1", { text: profile.name }),
+          ...(profile.citizenship
+            ? [el("p", { className: "meta", text: profile.citizenship })]
+            : []),
           ...(personalDetails.length > 0
             ? [el("p", { className: "meta", text: personalDetails.join(" · ") })]
             : [])

@@ -8,23 +8,23 @@
     "email": "thomas.droxler@gmail.com",
     "location": "Morges, Switzerland"
   },
-  "summary": "Senior Software Engineer with 10+ years of experience building high-performance backend services, blockchain infrastructure and distributed systems. Strong expertise in Scala, backend architecture, PostgreSQL optimization, API design and CI/CD workflows. Passionate about simple, maintainable solutions and clean software design, with a proven ability to quickly adapt to new technologies, domains, and challenges.",
+  "summary": "Lead Software Engineer with 11+ years of experience designing, building and operating production software in startup environments. Strong background in backend architecture, distributed systems, event-driven systems, PostgreSQL, APIs and the JVM ecosystem, with hands-on experience across Kafka, TypeScript/Node.js, CI/CD, Docker and Kubernetes. Experienced in taking projects from initial design to production and long-term technical ownership. Pragmatic, autonomous and comfortable learning new technologies and domains.",
   "experience": [
     {
       "company": "Alephium",
       "context": "Open-source blockchain protocol",
       "period": "2020 - Present",
-      "role": "Senior Software Engineer",
-      "description": "Designed and developed backend services, APIs, and blockchain infrastructure powering the Alephium ecosystem. Optimized systems processing over 100 million blockchain records, delivering low-latency and reliable access to data for users, wallets, explorers, and applications.",
+      "role": "Lead Software Engineer",
+      "description": "Designed and built distributed backend services, APIs and blockchain infrastructure for an open-source Layer 1 blockchain. Led the Explorer Backend from initial design to long-term production ownership, continuously synchronizing and indexing 100M+ blocks plus transactions and associated data, representing several hundred million PostgreSQL records.",
       "technologies": ["Scala", "Vert.x", "Akka/Pekko", "Tapir", "PostgreSQL", "TypeScript"]
     },
     {
       "company": "Bestmile",
       "context": "Mobility platform for autonomous vehicle fleets",
       "period": "2015 - 2020",
-      "role": "Progressed from Intern to Senior Scala Engineer",
-      "description": "Developed and scaled cloud-based software for the operation and optimization of autonomous vehicle fleets, contributing to backend architecture, distributed systems, and real-time data processing.",
-      "technologies": ["Scala", "Kafka", "Akka", "PostGIS", "Kubernetes"]
+      "role": "Progressed from Intern to Senior Software Engineer",
+      "description": "Developed and scaled distributed, event-driven backend services for a cloud platform operating autonomous vehicle fleets. Contributed to the transition from a monolithic architecture to microservices, taking services from design to production using Scala/JVM, Akka, Kafka and PostgreSQL/PostGIS.",
+      "technologies": ["Scala/JVM", "Akka", "Kafka", "PostgreSQL/PostGIS", "Microservices", "Kubernetes"]
     }
   ],
   "education": [

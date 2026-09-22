@@ -57,17 +57,17 @@ function expertiseItem(group) {
 const profile = cv.profile;
 const imagePath = profile.profilePic ? path.join(path.dirname(inputPath), profile.profilePic) : undefined;
 const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
-const contactDetails = [
-  profile.email,
-  profile.github,
-  profile.linkedin
+const contactLinks = [
+  profile.email ? `\\href{mailto:${profile.email}}{${tex(profile.email)}}` : undefined,
+  profile.github ? `\\href{${profile.github}}{${tex(profile.github)}}` : undefined,
+  profile.linkedin ? `\\href{${profile.linkedin}}{${tex(profile.linkedin)}}` : undefined
 ].filter(Boolean);
 const headerLines = [
   `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`,
   profile.citizenship ? `${tex(profile.citizenship)}\\\\` : undefined,
   personalDetails.length > 0 ? `${personalDetails.map(tex).join(" \\\\\n")}\\\\` : undefined,
   "\\vspace{3pt}",
-  contactDetails.length > 0 ? contactDetails.map(tex).join(" \\\\\n") : undefined
+  contactLinks.length > 0 ? contactLinks.join(" \\\\\n") : undefined
 ].filter(Boolean).join("\n");
 const headerBlock = profile.profilePic
   ? String.raw`\noindent
@@ -90,13 +90,14 @@ ${headerLines}
 const document = String.raw`\documentclass[11pt,a4paper]{article}
 
 \usepackage[
-  left=1.5cm,
-  right=1.5cm,
+  left=1.4cm,
+  right=1.4cm,
   top=1.5cm,
   bottom=0.9cm
 ]{geometry}
 
 \usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
 \pagestyle{empty}
 
 \begin{document}

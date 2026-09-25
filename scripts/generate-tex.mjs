@@ -28,6 +28,15 @@ function section(title, body) {
 ${body}`;
 }
 
+function compactSection(title, body) {
+  return `\\noindent{\\Large\\bfseries ${tex(title)}}\\par
+\\vspace{0.8em}
+\\hrule
+\\vspace{0.5em}
+
+${body}`;
+}
+
 function experienceItem(item) {
   const company = item.context ? `${item.company} (${item.context})` : item.company;
   return `\\textbf{${tex(company)}} \\hfill ${tex(item.period)}\\\\
@@ -58,15 +67,19 @@ const profile = cv.profile;
 const imagePath = profile.profilePic ? path.join(path.dirname(inputPath), profile.profilePic) : undefined;
 const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
 const contactLinks = [
-  profile.email ? `\\href{mailto:${profile.email}}{${tex(profile.email)}}` : undefined,
+  profile.email ? tex(profile.email) : undefined,
   profile.github ? `\\href{${profile.github}}{${tex(profile.github)}}` : undefined,
   profile.linkedin ? `\\href{${profile.linkedin}}{${tex(profile.linkedin)}}` : undefined
 ].filter(Boolean);
+const nameLine = profile.title
+  ? `{\\Huge\\bfseries ${tex(profile.name)}}\\hspace{0.8em}{\\LARGE ${tex(profile.title)}}\\\\`
+  : `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`;
 const headerLines = [
-  `{\\Huge\\bfseries ${tex(profile.name)}}\\\\`,
+  nameLine,
+  "\\vspace{1pt}",
   profile.citizenship ? `${tex(profile.citizenship)}\\\\` : undefined,
   personalDetails.length > 0 ? `${personalDetails.map(tex).join(" \\\\\n")}\\\\` : undefined,
-  "\\vspace{3pt}",
+  "\\vspace{1pt}",
   contactLinks.length > 0 ? contactLinks.join(" \\\\\n") : undefined
 ].filter(Boolean).join("\n");
 const headerBlock = profile.profilePic
@@ -104,7 +117,7 @@ const document = String.raw`\documentclass[11pt,a4paper]{article}
 
 ${headerBlock}
 
-\vspace{1.4em}
+\vspace{1em}
 
 ${section("Professional Summary", tex(cv.summary))}
 
@@ -114,9 +127,17 @@ ${section("Professional Experience", cv.experience.map(experienceItem).join("\n\
 
 ${section("Education", cv.education.map(educationItem).join("\n\n\\vspace{12pt}\n\n"))}
 
-${section("Languages", cv.languages.map(languageItem).join(" - "))}
-
-${section("Interests", cv.interests.map(tex).join(", "))}
+\vspace{1.2em}
+\noindent
+\begin{minipage}[t]{0.47\textwidth}
+\vspace{0pt}
+${compactSection("Languages", cv.languages.map(languageItem).join(" - "))}
+\end{minipage}%
+\hfill
+\begin{minipage}[t]{0.47\textwidth}
+\vspace{0pt}
+${compactSection("Interests", cv.interests.map(tex).join(", "))}
+\end{minipage}
 
 \end{document}
 `;

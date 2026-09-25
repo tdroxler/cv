@@ -1,6 +1,7 @@
 type Cv = {
   profile: {
     name: string;
+    title?: string;
     citizenship?: string;
     profilePic?: string;
     birthDate?: string;
@@ -98,7 +99,10 @@ function render(cv: Cv): void {
         ? [el("img", { className: "profile-pic", src: profile.profilePic, alt: `${profile.name} profile picture` })]
         : []),
         el("div", { className: "identity" }, [
-          el("h1", { text: profile.name }),
+          el("h1", {}, [
+            profile.name,
+            ...(profile.title ? [el("span", { className: "profile-title", text: profile.title })] : [])
+          ]),
           ...(profile.citizenship
             ? [el("p", { className: "meta", text: profile.citizenship })]
             : []),
@@ -147,8 +151,10 @@ function render(cv: Cv): void {
           ])
         )
       ),
-      section("Languages", [list(cv.languages.map(languageLabel))]),
-      section("Interests", [list(cv.interests)])
+      el("div", { className: "section-row" }, [
+        section("Languages", [list(cv.languages.map(languageLabel))]),
+        section("Interests", [list(cv.interests)])
+      ])
     ])
   );
 }

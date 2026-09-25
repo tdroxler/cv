@@ -1,6 +1,8 @@
+
 {
   "profile": {
     "name": "Thomas Droxler",
+    "title": "Senior Software Engineer",
     "citizenship": "Swiss citizen",
     "profilePic": "profile_pic.jpg",
     "github": "https://github.com/tdroxler",
@@ -8,23 +10,39 @@
     "email": "thomas.droxler@gmail.com",
     "location": "Morges, Switzerland"
   },
-  "summary": "Lead Software Engineer with 11+ years of experience designing, building and operating production software in startup environments. Strong background in backend architecture, distributed systems, event-driven systems, PostgreSQL, APIs and the JVM ecosystem, with hands-on experience across Kafka, TypeScript/Node.js, CI/CD, Docker and Kubernetes. Experienced in taking projects from initial design to production and long-term technical ownership. Pragmatic, autonomous and comfortable learning new technologies and domains.",
+  "summary": "Senior Software Engineer with 11+ years of experience building and operating production systems in Scala/JVM. Strong background in distributed systems, large-scale data processing, PostgreSQL/SQL and Kafka, with hands-on experience in CI/CD, Docker and Kubernetes. Experienced in taking data-intensive backend systems from initial design to production and long-term technical ownership. Pragmatic, autonomous and comfortable learning new technologies and domains.",
   "experience": [
     {
       "company": "Alephium",
       "context": "Open-source blockchain protocol",
       "period": "2020 - Present",
-      "role": "Lead Software Engineer",
-      "description": "Designed and built distributed backend services, APIs and blockchain infrastructure for an open-source Layer 1 blockchain. Led the Explorer Backend from initial design to long-term production ownership, continuously synchronizing and indexing 100M+ blocks plus transactions and associated data, representing several hundred million PostgreSQL records.",
-      "technologies": ["Scala", "Vert.x", "Akka/Pekko", "Tapir", "PostgreSQL", "TypeScript"]
+      "role": "Senior Software Engineer",
+      "description": "Designed and built distributed backend services and data-intensive systems for an open-source Layer 1 blockchain. Led the Explorer Backend from initial design to long-term production ownership, continuously ingesting, processing and indexing 100M+ blocks plus transactions and associated data, representing several hundred million PostgreSQL records. Worked extensively on data modeling, SQL query optimization, indexing and production performance.",
+      "technologies": [
+        "Scala/JVM",
+        "PostgreSQL/SQL",
+        "Akka/Pekko",
+        "Vert.x",
+        "Tapir",
+        "Docker",
+        "Kubernetes",
+        "Grafana/Prometheus"
+      ]
     },
     {
       "company": "Bestmile",
       "context": "Mobility platform for autonomous vehicle fleets",
       "period": "2015 - 2020",
       "role": "Progressed from Intern to Senior Software Engineer",
-      "description": "Developed and scaled distributed, event-driven backend services for a cloud platform operating autonomous vehicle fleets. Contributed to the transition from a monolithic architecture to microservices, taking services from design to production using Scala/JVM, Akka, Kafka and PostgreSQL/PostGIS.",
-      "technologies": ["Scala/JVM", "Akka", "Kafka", "PostgreSQL/PostGIS", "Microservices", "Kubernetes"]
+      "description": "Developed and scaled distributed backend services for a cloud platform operating autonomous vehicle fleets. Contributed to the transition from a monolithic architecture to microservices, taking services from design to production and working with real-time event processing using Scala/JVM, Akka, Kafka and PostgreSQL/PostGIS.",
+      "technologies": [
+        "Scala/JVM",
+        "Akka",
+        "Kafka",
+        "PostgreSQL/PostGIS",
+        "Microservices",
+        "Kubernetes"
+      ]
     }
   ],
   "education": [
@@ -36,33 +54,34 @@
   ],
   "expertise": [
     {
-      "category": "Backend & Architecture",
-      "items": [
-        "Distributed Systems",
-        "Software Architecture",
-        "API Design",
-        "Performance & Scalability"
-      ]
-    },
-    {
-      "category": "Data & Production",
+      "category": "Data & Distributed Systems",
       "items": [
         "PostgreSQL & SQL",
         "Data Modeling",
+        "Large-Scale Data Processing",
+        "Kafka & Event-Driven Systems",
         "Query & Performance Optimization",
-        "Production Troubleshooting",
-        "Monitoring & Observability",
+        "Distributed Systems"
+      ]
+    },
+    {
+      "category": "Backend Engineering",
+      "items": [
+        "Scala/JVM",
+        "Backend Architecture",
+        "API Design",
+        "Performance & Scalability",
         "Integration Testing"
       ]
     },
     {
-      "category": "Engineering & Delivery",
+      "category": "Production & Delivery",
       "items": [
         "Technical Ownership from Design to Production",
-        "Developer Tooling",
-        "CI/CD & Containerized Environments",
-        "Full-Stack Development",
-        "AI-Assisted Development"
+        "Production Troubleshooting",
+        "Monitoring & Observability",
+        "CI/CD",
+        "Docker & Kubernetes"
       ]
     }
   ],
@@ -79,6 +98,7 @@
   "interests": [
     "Music (performing musician, sound engineer)",
     "volunteering (Pro Senectute)",
-    "video games"
+    "video games",
+    "sport"
   ]
 }

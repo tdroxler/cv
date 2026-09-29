@@ -68,6 +68,7 @@ const imagePath = profile.profilePic ? path.join(path.dirname(inputPath), profil
 const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
 const contactLinks = [
   profile.email ? tex(profile.email) : undefined,
+  profile.phone ? `\\href{tel:${profile.phone.replace(/\s/g, "")}}{${tex(profile.phone)}}` : undefined,
   profile.github ? `\\href{${profile.github}}{${tex(profile.github)}}` : undefined,
   profile.linkedin ? `\\href{${profile.linkedin}}{${tex(profile.linkedin)}}` : undefined
 ].filter(Boolean);

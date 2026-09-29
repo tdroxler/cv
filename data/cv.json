@@ -2,22 +2,23 @@
 {
   "profile": {
     "name": "Thomas Droxler",
-    "title": "Senior Software Engineer",
+    "title": "Lead Software Engineer",
     "citizenship": "Swiss citizen",
     "profilePic": "profile_pic.jpg",
     "github": "https://github.com/tdroxler",
-    "linkedin": "https://linkedin.com/in/thomas-droxler-06010481",
+    "linkedin": "https://linkedin.com/in/thomas-droxler",
     "email": "thomas.droxler@gmail.com",
+    "phone": "+41 79 455 52 71",
     "location": "Morges, Switzerland"
   },
-  "summary": "Senior Software Engineer with 11+ years of experience building and operating production systems in Scala/JVM. Strong background in distributed systems, large-scale data processing, PostgreSQL/SQL and Kafka, with hands-on experience in CI/CD, Docker and Kubernetes. Experienced in taking data-intensive backend systems from initial design to production and long-term technical ownership. Pragmatic, autonomous and comfortable learning new technologies and domains.",
+  "summary": "Lead Software Engineer with 11+ years of experience designing, building and operating production software in startup environments. Strong background in backend architecture, distributed systems, PostgreSQL, APIs and the JVM ecosystem, with hands-on experience across Kafka, TypeScript/Node.js, CI/CD, Docker/Kubernetes and Grafana/Prometheus. Experienced in taking projects from initial design to production and long-term technical ownership. Pragmatic, autonomous and comfortable learning new technologies and domains.",
   "experience": [
     {
       "company": "Alephium",
       "context": "Open-source blockchain protocol",
       "period": "2020 - Present",
-      "role": "Senior Software Engineer",
-      "description": "Designed and built distributed backend services and data-intensive systems for an open-source Layer 1 blockchain. Led the Explorer Backend from initial design to long-term production ownership, continuously ingesting, processing and indexing 100M+ blocks plus transactions and associated data, representing several hundred million PostgreSQL records. Worked extensively on data modeling, SQL query optimization, indexing and production performance.",
+      "role": "Lead Software Engineer",
+      "description": "Designed and built distributed backend services, APIs and blockchain infrastructure for an open-source Layer 1 blockchain. Led the Explorer Backend from initial design to long-term production ownership, contin- uously synchronizing and indexing 100M+ blocks plus transactions and associated data, representing several hundred million PostgreSQL records.",
       "technologies": [
         "Scala/JVM",
         "PostgreSQL/SQL",
@@ -25,8 +26,7 @@
         "Vert.x",
         "Tapir",
         "Docker",
-        "Kubernetes",
-        "Grafana/Prometheus"
+        "Kubernetes"
       ]
     },
     {

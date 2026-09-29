@@ -7,6 +7,7 @@ type Cv = {
     birthDate?: string;
     location?: string;
     email?: string;
+    phone?: string;
     github?: string;
     linkedin?: string;
   };
@@ -87,6 +88,7 @@ function render(cv: Cv): void {
   const personalDetails = [profile.birthDate, profile.location].filter(Boolean);
   const contactLinks = [
     profile.email ? el("a", { href: `mailto:${profile.email}`, text: profile.email }) : undefined,
+    profile.phone ? el("a", { href: `tel:${profile.phone.replace(/\s/g, "")}`, text: profile.phone }) : undefined,
     profile.github ? el("a", { href: profile.github, text: profile.github }) : undefined,
     profile.linkedin ? el("a", { href: profile.linkedin, text: profile.linkedin }) : undefined
   ].filter((link): link is HTMLAnchorElement => Boolean(link));
